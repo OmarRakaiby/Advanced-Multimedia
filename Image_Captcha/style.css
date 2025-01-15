@@ -1,0 +1,71 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height for proper centering */
+    margin: 0; /* Remove default margin */
+    background-color: #f4f4f4;
+}
+
+.captcha-container {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto; /* Center horizontally within its container */
+    padding: 20px; /* Optional padding for visual appeal */
+    background-color: white; /* Background for better visibility */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for focus */
+    border-radius: 8px; /* Rounded corners for a modern look */
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.captcha-image {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.captcha-image.selected {
+    border: 2px solid blue;
+}
+
+.captcha-image.selected.correct {
+    border: 2px solid green;  /* Green border for correct selection */
+}
+
+.captcha-image.selected.incorrect {
+    border: 2px solid red; /* Red border for incorrect selection */
+}
+
+button {
+    padding: 10px 20px; /* Increased padding for better clickability */
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#result {
+    margin-top: 10px;
+    font-size: 18px;
+    color: green;
+}
+
+.hidden {
+    display: none;
+}

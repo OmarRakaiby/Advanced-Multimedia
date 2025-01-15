@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Optimizer</title>
+    <link rel="stylesheet" href="Finall.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🖼️ Image Optimizer</h1>
+            <p>Upload your image and optimize it without losing dimensions!</p>
+        </header>
+        
+        <main>
+            <div class="upload-section">
+                <input type="file" id="imageUpload" accept="image/*">
+                <p>Supported formats: JPG, PNG | Max size: 10MB</p>
+            </div>
+
+            <canvas id="canvas" style="display: none;"></canvas>
+
+            <div class="preview-section" id="previewSection" style="display: none;">
+                <h2>Preview Optimized Image</h2>
+                <img id="previewImage" src="" alt="Optimized Preview">
+                <div class="quality-options">
+                    <button data-quality="0.75">75%</button>
+                    <button data-quality="0.5">50%</button>
+                    <button data-quality="0.25">25%</button>
+                </div>
+                <button id="downloadBtn">Download Optimized Image</button>
+            </div>
+        </main>
+    </div>
+
+    <script src="Finalll.js"></script>
+</body>
+</html>
