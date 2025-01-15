@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shape Generator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Project.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/classic.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Shape Generator</h1>
+        <div class="main-content d-flex">
+            <div class="controls mr-4">
+                <div class="form-group">
+                    <label for="dimension">Choose Dimension:</label>
+                    <select class="form-control" id="dimension" onchange="toggleDimension()">
+                        <option value="2d">2D</option>
+                        <option value="3d">3D</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="shape">Choose Shape:</label>
+                    <select class="form-control" id="shape" onchange="toggleCoordinatesInput()">
+                        <option value="circle">Circle</option>
+                        <option value="rectangle">Rectangle</option>
+                        <option value="square">Square</option>
+                        <option value="triangle">Triangle</option>
+                        <option value="ellipse">Ellipse</option>
+                        <option value="star">Star</option>
+                        <option value="custom">Custom (Enter Coordinates)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="color">Choose Color:</label>
+                    <div id="color-picker"></div>
+                    <input type="hidden" id="color" value="#ff0000">
+                </div>
+                
+                <div id="coordinates-input" class="form-group" style="display: none;">
+                    <label for="coordinates">Enter Coordinates (e.g., (x1, y1), (x2, y2), ...):</label>
+                    <input type="text" class="form-control" id="coordinates" placeholder="(100,100), (150,200), (200,150)">
+                </div>
+
+                <button class="btn btn-primary mt-3" onclick="drawShape()">Draw Shape</button>
+            </div>
+
+            <canvas id="canvas" width="500" height="500" class="border border-secondary"></canvas>
+
+            <div id="threejs-container" class="border border-secondary" style="width: 500px; height: 500px; display: none;"></div>
+        </div>
+    </div>
+    <script src="Project.js"></script>
+</body>
+</html>
